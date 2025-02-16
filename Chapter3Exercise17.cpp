@@ -17,18 +17,18 @@ int main()
     int numbertwo = randomInt(numGen);
     int solution = numberone + numbertwo;                                                       //Define variables and set up random number generatoir
 
-    cout << "Please solve the following addition problem:\n"
-        << " " << numberone << endl
-        << "+" << numbertwo << endl
-        << "-----" << endl << endl
+    cout <<"Please solve the following addition problem:\n"
+        << left << setw(3) << " " << numberone << endl
+        << setw(3) << "+" << numbertwo << endl
+        << "------" << endl << endl
         << "When you are ready to answer, please enter in your answer to continue: ";           //Display problem and prompt
 
     cin>> answer;                                                                               //Store user answer
 
-    cout << endl << " " << numberone << endl
-        << "+" << numbertwo << endl
-        << "-----" << endl
-        << solution;                                                                            //Display solution
+    cout << left << endl << setw(3) << " " << numberone << endl
+        << setw(3) << "+" << numbertwo << endl
+        << "------" << endl
+        << right <<setw(6)<<solution;                                                           //Display solution
 
     if (answer == solution)
         cout << "\nYou are correct!\n";
