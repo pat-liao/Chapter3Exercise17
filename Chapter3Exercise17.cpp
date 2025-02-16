@@ -1,7 +1,7 @@
-/*Program File Name: Chapter3Exercise17
+/*Program File Name: Chapter3Exercise17Part2
 Programmer: Patrick Liao
 Date: 2.16.2025
-Requirements: Display 2 random numbers to be added, then show solution on user prompt */
+Requirements: Display 2 random numbers to be added, allow user to enter answer, then show solution with an error check */
 
 #include <iostream>
 #include <iomanip>
@@ -12,23 +12,28 @@ int main()
 {
     random_device numGen;
     uniform_int_distribution<int> randomInt(0, 999);
+    int answer;
     int numberone = randomInt(numGen);
     int numbertwo = randomInt(numGen);
-    int solution = numberone + numbertwo;                                               //Define variables and set up random number generatoir
+    int solution = numberone + numbertwo;                                                       //Define variables and set up random number generatoir
 
     cout << "Please solve the following addition problem:\n"
         << " " << numberone << endl
         << "+" << numbertwo << endl
         << "-----" << endl << endl
-        << "When you are ready to answer, please press Enter to continue: ";            //Display problem and prompt
+        << "When you are ready to answer, please enter in your answer to continue: ";           //Display problem and prompt
 
-    cin.get();                                                                          //Detect user prompt
+    cin>> answer;                                                                               //Store user answer
 
     cout << endl << " " << numberone << endl
         << "+" << numbertwo << endl
         << "-----" << endl
-        << solution;                                                                    //Display solution
-        
+        << solution;                                                                            //Display solution
 
+    if (answer == solution)
+        cout << "\nYou are correct!\n";
+    else
+        cout << "\nYou are incorrect!\n";                                                         //Check the user's answer and display message. 
+        
     return 0;
 }
